@@ -1,0 +1,7 @@
+hist() {
+    if [[ "$#" -eq 0 ]]; then
+        echo "what are you trying to look for?"
+    else
+        history | grep -i "$1"
+    fi
+}
