@@ -12,6 +12,9 @@ Plug 'nvim-tree/nvim-web-devicons'
 
 call plug#end()]])
 
+-- autostart COQ
+vim.g.coq_settings = { ["auto_start"] = 'shut-up' }
+
 -- setup comment
 require('Comment').setup()
 
