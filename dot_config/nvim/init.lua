@@ -3,9 +3,17 @@ vim.cmd([[call plug#begin()
 
 Plug 'Mofiqul/dracula.nvim'
 Plug 'dense-analysis/ale'
+Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
+Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+Plug 'numToStr/Comment.nvim'
 
 call plug#end()]])
 
+-- setup comment
+require('Comment').setup()
+
+-- set colorscheme to dracula
 vim.cmd[[colorscheme dracula]]
 
 -- enable line numbers
