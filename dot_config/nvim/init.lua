@@ -9,16 +9,17 @@ Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 Plug 'numToStr/Comment.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
-Plug 'saghen/blink.indent'
 Plug 'nikvdp/neomux'
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 call plug#end()]])
 
 -- autostart COQ
 vim.g.coq_settings = { ["auto_start"] = 'shut-up' }
 
--- setup comment
+-- setup comment & indent-blankline
 require('Comment').setup()
+require('ibl').setup()
 
 -- set colorscheme to dracula
 vim.cmd[[colorscheme dracula]]
@@ -58,6 +59,10 @@ vim.opt.scrolloff = 5
 
 -- dont show vim mode
 vim.opt.showmode = false
+
+-- make tab into 4 spaces, 8 too much
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
 
 -- lualine config
 require('lualine').setup {
