@@ -6,19 +6,18 @@ Plug 'dense-analysis/ale'
 Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
 Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
-Plug 'numToStr/Comment.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'nikvdp/neomux'
 Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'nvim-mini/mini.comment'
 
 call plug#end()]])
 
 -- autostart COQ
 vim.g.coq_settings = { ["auto_start"] = 'shut-up' }
 
--- setup comment & indent-blankline
-require('Comment').setup()
+-- setup indent-blankline
 require('ibl').setup()
 
 -- set colorscheme to dracula
@@ -102,7 +101,7 @@ require('lualine').setup {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
     lualine_c = {'filename'},
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_x = {'filetype'},
     lualine_y = {'progress'},
     lualine_z = {'location'}
   },
