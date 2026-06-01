@@ -1,7 +1,0 @@
-mans() {
-    if [[ $# -ne 2 ]]; then
-        echo "Usage: mans [command] [query]"
-    else
-        man "$1" | grep -iC 5 "$2"
-    fi
-}

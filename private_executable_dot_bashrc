@@ -14,15 +14,37 @@ if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
 fi
 export PATH
 
-# Uncomment the following line if you don't like systemctl's auto-paging feature:
-# export SYSTEMD_PAGER=
+# -- START OF ALIAS --
+alias chez=chezmoi
+alias py=python
+alias tracert=traceroute
+alias vim=nvim # boohoo
+# -- END OF ALIAS --
 
-# User specific aliases and functions
-if [ -d ~/.bashrc.d ]; then
-    for rc in ~/.bashrc.d/*; do
-        if [ -f "$rc" ]; then
-            . "$rc"
-        fi
+colors() {
+    for i in {0..255}; do
+        printf '\e[48;5;%dm%3d ' "$i" "$i"
+        (((i+3) % 18)) || printf '\e[0m\n'
     done
-fi
-unset rc
+    printf '\e[0m\n'
+}
+
+hist() {
+    if [[ "$#" -eq 0 ]]; then
+        echo "what are you trying to look for?"
+    else
+        history | grep -i "$1"
+    fi
+}
+
+mans() {
+    if [[ $# -ne 2 ]]; then
+        echo "Usage: mans [command] [query]"
+    else
+        man "$1" | grep -iC 5 "$2"
+    fi
+}
+
+mkcd() {
+    mkdir -p "$1" && cd "$1"
+}
