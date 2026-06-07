@@ -14,12 +14,14 @@ if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
 fi
 export PATH
 
-# -- START OF ALIAS --
+# General Aliases
 alias chez=chezmoi
 alias py=python
 alias tracert=traceroute
 alias vim=nvim # boohoo
-# -- END OF ALIAS --
+
+# Extra Aliases
+alias reboot='systemctl reboot'
 
 colors() {
     for i in {0..255}; do
@@ -35,6 +37,17 @@ ctest() {
 		echo "Usage: ctest [RGB Color] [text]"
 	else
 		printf '\e[38;5;%im%s\e[0m\n' "$1" "${text#* }"
+	fi
+}
+
+# might as well make place this here
+ezbashrc() {
+	local bashrc="$HOME/.bashrc"
+	cat "$bashrc" > "$bashrc".tmp
+	run0edit --no-prompt "$bashrc"
+	if ! diff "$bashrc" "$bashrc".tmp >/dev/null 2>&1; then
+		echo "Applying changes to chezmoi..."
+		chezmoi add "$bashrc"
 	fi
 }
 
