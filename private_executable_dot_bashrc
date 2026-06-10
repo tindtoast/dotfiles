@@ -17,6 +17,7 @@ export PATH
 # General Aliases
 alias chez=chezmoi
 alias py=python
+alias rpmos=rpm-ostree
 alias tracert=traceroute
 alias vim=nvim # boohoo
 
