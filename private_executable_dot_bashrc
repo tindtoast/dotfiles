@@ -23,6 +23,7 @@ alias vim=nvim # boohoo
 
 # Extra Aliases
 alias reboot='systemctl reboot'
+alias plusx='chmod +x'
 
 colors() {
     for i in {0..255}; do
@@ -39,14 +40,6 @@ ctest() {
 	else
 		printf '\e[38;5;%im%s\e[0m\n' "$1" "${text#* }"
 	fi
-}
-
-dasx() {
-	if ! [[ -f "$1" ]]; then
-		echo "Usage: dasx [file] - makes a file executable"
-	else
-		chmod +x "$1"
-
 }
 
 # might as well make place this here
