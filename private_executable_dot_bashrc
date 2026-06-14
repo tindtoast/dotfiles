@@ -41,6 +41,14 @@ ctest() {
 	fi
 }
 
+dasx() {
+	if ! [[ -f "$1" ]]; then
+		echo "Usage: dasx [file] - makes a file executable"
+	else
+		chmod +x "$1"
+
+}
+
 # might as well make place this here
 ezbashrc() {
 	local bashrc="$HOME/.bashrc"
