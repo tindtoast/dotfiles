@@ -3,9 +3,9 @@ vim.cmd([[call plug#begin()
 
 Plug 'Mofiqul/dracula.nvim'
 Plug 'dense-analysis/ale'
-Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
-Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
-Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+"Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+"Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
+"Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'nikvdp/neomux'
